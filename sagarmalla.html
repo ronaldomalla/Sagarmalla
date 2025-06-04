@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sagar Malla – Professional Portfolio & CV</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    /* Reset & base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0;
+      background: #f7f6fc;
+      color: #2c2c2c;
+      line-height: 1.6;
+    }
+    a {
+      color: #6a23cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      background: #350055;
+      color: #dda0dd;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgb(53 0 85 / 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header h1 {
+      font-weight: 700;
+      margin: 0;
+      font-size: 1.6rem;
+      user-select: none;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0; padding: 0;
+    }
+    nav ul li a {
+      font-weight: 600;
+      color: #dda0dd;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #fff;
+      border-bottom: 2px solid #fff;
+      padding-bottom: 2px;
+    }
+
+    /* Hero section */
+    #hero {
+      background: linear-gradient(135deg, #6a23cc, #b360d9);
+      color: #fff;
+      text-align: center;
+      padding: 5rem 2rem 3rem;
+      user-select: none;
+    }
+    #hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 0.2rem;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-shadow: 0 0 10px rgba(255 255 255 / 0.4);
+    }
+    #hero p {
+      font-size: 1.25rem;
+      margin-top: 0;
+      font-weight: 500;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #hero .contact-info {
+      margin-top: 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    #hero .contact-info i {
+      margin-right: 0.5rem;
+      color: #e9c7ff;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto 4rem;
+      padding: 0 1rem;
+    }
+    section {
+      margin-bottom: 3.5rem;
+    }
+    section h3 {
+      font-size: 1.8rem;
+      color: #350055;
+      border-bottom: 3px solid #b360d9;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1.25rem;
+      user-select: none;
+    }
+
+    /* Profile & photo */
+    #about {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      user-select: none;
+    }
+    #about img {
+      border-radius: 12px;
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      box-shadow: 0 4px 15px rgb(106 35 204 / 0.4);
+      flex-shrink: 0;
+    }
+    #about .about-text {
+      font-size: 1.05rem;
+      line-height: 1.5;
+      color: #3c2a5f;
+    }
+
+    /* Experience, education, skills lists */
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+      margin-bottom: 0.7rem;
+    }
+    li strong {
+      color: #6a23cc;
+    }
+    .job-title {
+      font-weight: 700;
+      color: #350055;
+    }
+    .period {
+      font-style: italic;
+      color: #7b6ba5;
+      font-size: 0.9rem;
+    }
+    .description {
+      margin-top: 0.2rem;
+      color: #5a457b;
+      font-size: 0.95rem;
+      max-width: 700px;
+    }
+
+    /* Skills tags */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+    .skill {
+      background: #dda0dd;
+      color: #350055;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      user-select: none;
+      box-shadow: 0 2px 6px rgb(187 51 255 / 0.4);
+      transition: background-color 0.3s ease;
+    }
+    .skill:hover {
+      background: #b360d9;
+      color: white;
+      cursor: default;
+    }
+
+    /* Contact section */
+    #contact {
+      background: #350055;
+      color: #dda0dd;
+      padding: 2rem 1rem;
+      border-radius: 12px;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      user-select: none;
+    }
+    #contact h3 {
+      color: #e9c7ff;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    #contact p {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+    }
+    #contact a {
+      color: #dda0dd;
+      font-weight: 700;
+      word-break: break-all;
+    }
+    #contact a:hover {
+      color: #fff;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      background: #2a0040;
+      color: #bda0dd;
+      font-size: 0.9rem;
+      user-select: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      #about {
+        flex-direction: column;
+        text-align: center;
+      }
+      #about img {
+        margin-bottom: 1rem;
+      }
+      .skills-list {
+        justify-content: center;
+      }
+    }
+    @media (max-width: 500px) {
+      header {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Sagar Malla</h1>
+  <nav>
+    <ul>
+      <li><a href="#hero" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="hero" role="banner" aria-label="Introduction">
+  <h2>Sagar Malla</h2>
+  <p>Web Developer | Data Analyst | Social Media Designer</p>
+  <div class="contact-info" aria-label="Contact information">
+    <p><i class="fas fa-phone"></i> +977 9769318708</p>
+    <p><i class="fas fa-envelope"></i> <a href="mailto:sagarmalla03@gmail.com">sagarmalla03@gmail.com</a></p>
+    <p><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</p>
+    <p><i class="fas fa-birthday-cake"></i> Born: June 11, 1996</p>
+  </div>
+</section>
+
+<div class="container">
+
+  <section id="about" aria-label="About Sagar Malla">
+    <img src="https://i.pravatar.cc/180?img=65" alt="Portrait of Sagar Malla" />
+    <div class="about-text">
+      <p>
+        I am Sagar Malla from Nawalparasi Bardaghat Municipality, currently living and working in Kathmandu.
+        Passionate about web development, data analysis, and social media design, I have over 5 years of experience
+        in IT training, web development, and freelance projects.
+      </p>
+      <p>
+        Skilled in Python, HTML, CSS, JavaScript, Django backend, Microsoft Office packages, Power BI, and basic hardware & IT support.
+        Experienced instructor and developer with a diploma in Computer Engineering from Lumbini Engineering College.
+      </p>
+    </div>
+  </section>
+
+  <section id="experience" aria-label="Work Experience">
+    <h3>Professional Experience</h3>
+    <ul>
+      <li>
+        <span class="job-title">Web Developer – Vedu, Kumaripati</span><br />
+        <span class="period">April 2025 – Present</span>
+        <p class="description">Developing websites and managing web applications.</p>
+      </li>
+      <li>
+        <span class="job-title">Department Head & IT Support – Codehub Education and Technology</span><br />
+        <span class="period">July 2022 – December 2024</span>
+        <p class="description">Managed IT training department, provided IT support, hardware & CCTV installation experience.</p>
+      </li>
+      <li>
+        <span class="job-title">Web Developer & Instructor – Dragon Studio</span><br />
+        <span class="period">April 2020 – May 2022</span>
+        <p class="description">Web development and teaching programming courses.</p>
+      </li>
+      <li>
+        <span class="job-title">Python & Web Instructor (Part-time) – Butwal Hub IT Training Center</span><br />
+        <span class="period">May 2019 – March 2020</span>
+        <p class="description">Teaching Python and web development to students.</p>
+      </li>
+      <li>
+        <span class="job-title">Intern Trainer – NIIT Jamal</span><br />
+        <span class="period">January 2019 – April 2019</span>
+        <p class="description">Intern trainer for web and Microsoft packages courses.</p>
+      </li>
+      <li>
+        <span class="job-title">Freelance Social Media Designer & Web Developer</span><br />
+        <span class="period">2019 – Present</span>
+        <p class="description">Remote work for Royal Bhutaha Club, Vedu Global Institute, A1 Solution, Seaborn Technology Education, and more.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="education" aria-label="Education & Certifications">
+    <h3>Education & Certifications</h3>
+    <ul>
+      <li>
+        <strong>Diploma in Computer Engineering</strong>, Lumbini Engineering College, 2018<br />
+        Percentage: 65.48%
+      </li>
+      <li>
+        <strong>Python Developer Certificate</strong>, Alpine Technology, 2019 (2 months training)
+      </li>
+      <li>
+        <strong>School Leaving Certificate (SLC)</strong>, Salbas Sunrise English Secondary School, 2014<br />
+        Percentage: 66.36%
+      </li>
+      <li>
+        Multiple workshops on Python & Web Development
+      </li>
+    </ul>
+  </section>
+
+  <section id="skills" aria-label="Skills & Tools">
+    <h3>Technical Skills</h3>
+    <div class="skills-list">
+      <span class="skill">Python</span>
+      <span class="skill">HTML5</span>
+      <span class="skill">CSS3</span>
+      <span class="skill">JavaScript</span>
+      <span class="skill">Django</span>
+      <span class="skill">Microsoft Office</span>
+      <span class="skill">Power BI</span>
+      <span class="skill">Data Analysis</span>
+      <span class="skill">Web Development</span>
+      <span class="skill">Social Media Design</span>
+      <span class="skill">IT Support</span>
+      <span class="skill">Hardware & CCTV Installation</span>
+    </div>
+  </section>
+</div>
+
+<section id="contact" aria-label="Contact Information">
+  <h3>Contact Me</h3>
+  <p><i class="fas fa-phone"></i> Phone: <a href="tel:+9779769318708">+977 9769318708</a></p>
+  <p><i class="fas fa-envelope"></i> Email: <a href="mailto:sagarmalla03@gmail.com">sagarmalla03@gmail.com</a></p>
+  <p><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</p>
+</section>
+
+<footer>
+  &copy; 2025 Sagar Malla. All rights reserved.
+</footer>
+
+<script>
+  // Simple smooth scroll for nav links
+  document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelectorAll('nav ul li a').forEach(a => a.classList.remove('active'));
+      link.classList.add('active');
+      const target = document.querySelector(link.getAttribute('href'));
+      target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>
